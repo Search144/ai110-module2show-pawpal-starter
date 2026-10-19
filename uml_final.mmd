@@ -1,0 +1,43 @@
+classDiagram
+    class Owner {
+        +String name
+        +String contact_info
+        +List~Pet~ pets
+        +add_pet(Pet pet)
+        +update_preferences(dict preferences)
+        +get_all_tasks() List~tuple~
+    }
+
+    class Pet {
+        +String name
+        +String species
+        +int age
+        +List~CareTask~ tasks
+        +add_task(CareTask task)
+        +remove_task(String task_title)
+    }
+
+    class CareTask {
+        +String title
+        +int duration_minutes
+        +String priority
+        +String time_slot
+        +String frequency
+        +bool is_completed
+        +String due_date
+        +mark_completed() CareTask
+    }
+
+    class Scheduler {
+        +int available_time_minutes
+        +sort_by_time(List tasks) List
+        +filter_tasks(Owner owner, String pet_name, bool status) List
+        +detect_conflicts(Owner owner) List~String~
+        +filter_and_prioritize_tasks(Owner owner) List
+        +generate_daily_plan(Owner owner) List~dict~
+        +explain_plan(List scheduled_tasks) String
+    }
+
+    Owner "1" --> "*" Pet : owns
+    Pet "1" --> "*" CareTask : has
+    Scheduler --> Owner : queries tasks for

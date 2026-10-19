@@ -28,7 +28,9 @@ Scheduler: filters by time constraints and priority
 **a. Constraints and priorities**
 
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
+We took into account the time and how certain times could match
 - How did you decide which constraints mattered most?
+I decided based on what I felt was a more realistic conflict pet owners face
 
 **b. Tradeoffs**
 
@@ -61,12 +63,16 @@ I usually tested it or looked it over to see if it made sense.
 **a. What you tested**
 
 - What behaviors did you test?
+some behaviors I tested were conflict detection, completion, and task addition
 - Why were these tests important?
+Its important as these things need to work to ensure the code is running to completion and that time conflicts are being detected
 
 **b. Confidence**
 
 - How confident are you that your scheduler works correctly?
+Very confident
 - What edge cases would you test next if you had more time?
+I guess if task can be properly removed 
 
 ---
 
@@ -75,11 +81,14 @@ I usually tested it or looked it over to see if it made sense.
 **a. What went well**
 
 - What part of this project are you most satisfied with?
+I think my initial work on pawpal_system.py went well
 
 **b. What you would improve**
 
 - If you had another iteration, what would you improve or redesign?
+I would maybe redesign some of the app to make it more clean.
 
 **c. Key takeaway**
 
 - What is one important thing you learned about designing systems or working with AI on this project?
+I learned how to better apply and rely on AI for error handeling especially if I don't understand the error.

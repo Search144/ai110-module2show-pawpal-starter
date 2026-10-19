@@ -109,11 +109,10 @@ test_pawpal.py .....                                                            
 
 Describe your app in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. **Add/Manage Pets**: Enter owner information and add pets to your household.
+2. **Add Care Tasks**: Assign tasks with specific titles, durations, priorities, time slots, and frequencies (daily/weekly/once) to your pets.
+3. **Conflict Detection**: If two tasks share the exact same start time, a warning alert appears.
+4. **Generate Schedule**: Select your available daily time budget and generate an optimized plan explaining why tasks were chosen.
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
 
@@ -123,3 +122,4 @@ Describe your app in numbered steps so a reader can follow along without watchin
 - **`Pet`**: Manages pet profile details and an internal collection of `CareTask` objects.
 - **`Owner`**: Manages household pets and collects all household care responsibilities via `get_all_tasks()`.
 - **`Scheduler`**: Retrieves all multi-pet tasks through the Owner, prioritizing them based on importance and duration, and fitting them into an available time budget.
+

@@ -78,7 +78,6 @@ def test_conflict_detection():
     owner.add_pet(pet1)
     owner.add_pet(pet2)
 
-    # Both tasks scheduled at the exact same time slot "08:00"
     task1 = CareTask(title="Morning Walk", duration_minutes=30, priority="high", time_slot="08:00")
     task2 = CareTask(title="Breakfast", duration_minutes=10, priority="high", time_slot="08:00")
 
