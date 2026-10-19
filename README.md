@@ -46,6 +46,21 @@ pip install -r requirements.txt
 
 Paste a sample of your app's CLI or Streamlit output here so a reader can see what a generated plan looks like:
 
+==================================================
+🐾 TODAY'S PAWPAL+ SCHEDULE FOR JORDAN'S PETS 🐾
+==================================================
+1. Snorkel — Give Medication (5 min) [HIGH]
+2. Crunch — Walking Pet (30 min) [HIGH]
+3. Snorkel — Play Session (20 min) [MEDIUM]
+--------------------------------------------------
+Schedule breakdown and reasoning:
+1. [HIGH] Give Medication for Snorkel (5 min) - Selected due to high priority and available time window.
+2. [HIGH] Walking Pet for Crunch (30 min) - Selected due to high priority and available time window.
+3. [MEDIUM] Play Session for Snorkel (20 min) - Selected due to high priority and available time window.
+
+Total planned time: 55 minutes out of 60 minutes available.
+==================================================
+
 ```
 # e.g.:
 # Daily plan for Biscuit (Golden Retriever):
@@ -76,10 +91,10 @@ Sample test output:
 
 | Feature | Method(s) | Notes |
 |---------|-----------|-------|
-| Task sorting | | e.g., by priority, duration |
-| Filtering | | e.g., skip tasks if time runs out |
-| Conflict handling | | e.g., overlapping time slots |
-| Recurring tasks | | e.g., daily vs. weekly |
+| Task sorting | | e.g., by priority, duration | Sorts task chronologically
+| Filtering | | e.g., skip tasks if time runs out | Filters tasks dynamically by pet name or completion status
+| Conflict handling | | e.g., overlapping time slots | Warns when multiple task share the same time slot
+| Recurring tasks | | e.g., daily vs. weekly | Automatically calculates the next occurrence for daily/weekly tasks
 
 ## 📸 Demo Walkthrough
 
@@ -92,3 +107,10 @@ Describe your app in numbered steps so a reader can follow along without watchin
 5. <!-- Add more steps as needed -->
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
+
+## 🛠️ Implementation Summary
+
+- **`CareTask`**: Implements individual care activities.
+- **`Pet`**: Manages pet profile details and an internal collection of `CareTask` objects.
+- **`Owner`**: Manages household pets and collects all household care responsibilities via `get_all_tasks()`.
+- **`Scheduler`**: Retrieves all multi-pet tasks through the Owner, prioritizing them based on importance and duration, and fitting them into an available time budget.

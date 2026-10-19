@@ -6,6 +6,15 @@
 
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
+Add a pet and enter its details
+Manage tasks by adding, editing, or removing them
+Generate and view daily schedule by automatically building an automized daily plan
+
+Owner: Manages information such as contact details and collecion of pets. Responsible for adding pets as well as care preferences
+Pet: Represents a pets attributes such as name and age. Provides methods to add or remove task
+CareTask: the attributes of care task
+Scheduler: filters by time constraints and priority
+
 
 **b. Design changes**
 
@@ -24,8 +33,9 @@
 **b. Tradeoffs**
 
 - Describe one tradeoff your scheduler makes.
+It only looks for exact time matches, rather than checking if tasks overlap in duration
 - Why is that tradeoff reasonable for this scenario?
-
+Checking for exact time matches is fast and easy to read
 ---
 
 ## 3. AI Collaboration
@@ -33,12 +43,16 @@
 **a. How you used AI**
 
 - How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
+Used it to help figure out errors and to brainstorm pieces of code
 - What kinds of prompts or questions were most helpful?
+I found a lot of error prompts helpful as I would paste an error I don't understand and ask for a fix or explanantion and usually get one that makes sense to me.
 
 **b. Judgment and verification**
 
 - Describe one moment where you did not accept an AI suggestion as-is.
+There was one time when the AI made a code in explain_plan that confused me a bit, I initially took it before realizing it had a few errors and decided to fix it up and change it a bit
 - How did you evaluate or verify what the AI suggested?
+I usually tested it or looked it over to see if it made sense.
 
 ---
 

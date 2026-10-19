@@ -1,0 +1,36 @@
+classDiagram
+    class Owner {
+        +String name
+        +String contactInfo
+        +addPet(Pet pet)
+        +updatePreferences(Preferences prefs)
+    }
+
+    class Pet {
+        +String name
+        +String species
+        +int age
+        +List~CareTask~ tasks
+        +addTask(CareTask task)
+        +removeTask(String taskId)
+    }
+
+    class CareTask {
+        +String title
+        +int durationMinutes
+        +String priority
+        +boolean isCompleted
+        +markCompleted()
+    }
+
+    class Scheduler {
+        +int availableTimeMinutes
+        +generateDailyPlan(Pet pet)
+        +filterAndPrioritizeTasks(List~CareTask~ tasks)
+        +explainPlan()
+    }
+
+    Owner "1" --> "*" Pet : owns
+    Pet "1" --> "*" CareTask : has
+    Scheduler --> Pet : plans for
+    Scheduler --> CareTask : schedules
